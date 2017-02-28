@@ -75,8 +75,10 @@ class FirstTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-            let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! myTableViewCell
         
+        
+            let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! myTableViewCell
+            cell.myImageview.image = nil // 這樣往下滑動時新產生的cell才不會顯示舊圖
     
             cell.myLabel.text = resultsArray?[indexPath.row]["Name"]
         
